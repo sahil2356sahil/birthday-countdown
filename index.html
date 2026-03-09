@@ -265,8 +265,9 @@
         }
 
         function checkBirthday(now) {
-            // Check if today is March 11th
-            if (now.getMonth() === birthdayMonth && now.getDate() === birthdayDate) {
+            // Check if today is March 11th AND time is 1:00 PM or later
+            const currentHour = now.getHours();
+            if (now.getMonth() === birthdayMonth && now.getDate() === birthdayDate && currentHour >= 13) {
                 showSurprise();
             }
         }
